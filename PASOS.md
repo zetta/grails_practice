@@ -17,7 +17,19 @@ Declarar atributos de los objetos de dominio ...
 
 Generar el Servicio 
 
-1. ´grails create-service com.toptel.curso.practica.servicios.CuentaBancaria´
+1. ´grails create-service com.toptel.curso.practica.servicios.CuentaBancaria´ 
 
+Que implementa una interfaz de negocio *ServicioBanco*.
+
+dentro del paquete  com.toptel.curso.practica.servicios se crea la clase RespuestaServicio
+que es el objeto que regresará el servicio al terminar.
+
+
+Se crea el paquete com.toptel.curso.practica.helpers con las clases
+
+ - CalculadorGlobalHelper **obtendra los calculos y las transacciones para generar el xml del mes y año especificados**
+ - DepositoHelper **calcula los depositos por mes y año y devuele las transacciones**
+ - TraspasoHelper **calcula los traspasos por mes y año y devuele las transacciones**
+ - RetiroHelper **calcula los retiros por mes y año y devuele las transacciones**
 
 

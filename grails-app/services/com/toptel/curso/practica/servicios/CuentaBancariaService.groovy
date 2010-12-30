@@ -10,7 +10,7 @@ class CuentaBancariaService implements ServicioBanco {
 	RespuestaServicio calcularEstadoCuenta (int year, int month)
 	{
 		def respuesta = new RespuestaServicio();
-		def helper = new CalculadorHelper()
+		def helper = new CalculadorGlobalHelper()
 		respuesta.estadoCuenta =  helper.calcula(year,month)
 		
 	}
