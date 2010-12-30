@@ -2,7 +2,7 @@ package com.toptel.curso.practica.domain
 
 class Movimiento {
 
-	String tipoDeMovimiento
+	String tipoMovimiento
 	double monto
 	DateTime fecha
 	String concepto
