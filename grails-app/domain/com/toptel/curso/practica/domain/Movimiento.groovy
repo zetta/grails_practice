@@ -4,7 +4,8 @@ class Movimiento {
 
 	String tipoDeMovimiento
 	double monto
-	
+	DateTime fecha
+	String concepto
 
     static constraints = {
     }

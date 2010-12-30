@@ -13,3 +13,11 @@ Instalar plugin *joda-time*
 
 1. ´grails install-plugin joda-time´
 
+Declarar atributos de los objetos de dominio ...
+
+Generar el Servicio 
+
+1. ´grails create-service com.toptel.curso.practica.servicios.CuentaBancaria´
+
+
+
