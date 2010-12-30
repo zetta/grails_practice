@@ -24,7 +24,7 @@ PRACTICA
 - El servicio Grails debe arrojar un pequeño reporte a consola al iniciar indicando los beans de reglas que le fueron cargados, y en que orden (Tip: Pueden utilizar InitializingBean u otras herramientas de Spring)
 - El estado de cuenta debe ser un archivo XML, y además, este archivo debe ser validado por un esquema XSD.
 - El código para validar un XML en base a un XSD es el siguiente:
-
+´
     import javax.xml.XMLConstants 
     import javax.xml.transform.stream.StreamSource 
     import javax.xml.validation.SchemaFactory 
@@ -34,7 +34,7 @@ PRACTICA
         def factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI)
         def schema = factory.newSchema(new StreamSource(classpathRes.getInputStream()))
     def validator = schema.newValidator()
-    validator.validate(new StreamSource(new StringReader(cadenaXml)))
+    validator.validate(new StreamSource(new StringReader(cadenaXml)))´
 - El estado de cuenta debe tener perfectamente identificados los siguientes elementos:
   - Movimientos y su tipo (deposito, retiro, traspaso)
   - Cargos y abonos (impuestos, intereses, etc)
