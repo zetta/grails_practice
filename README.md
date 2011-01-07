@@ -16,25 +16,26 @@ PRACTICA
     - Cada bean de spring solo realizará un tipo de cálculo
     - Al inicializarse cada bean de Spring, deberá validar que todos los recursos que necesite para trabajar, ya sean objetos de dominio que apoyen sus cálculos, inyecciones de otros beans, etc.
     - Cuando se presente un error en el cálculo, arrojar una excepción 
-    - Las reglas deben ejecutarse en un orden predefinido (Existe una interface llamada Ordered que les puede ser de utilidad)
-    - Los beans de Spring y sus dependencias deben declararse en el archivo resources.groovy mediante el DSL de Spring [http://grails.org/doc/1.3.5/guide/14.%20Grails%20and%20Spring.html]
+    - Las reglas deben ejecutarse en un orden predefinido (Existe una interface llamada **Ordered** que les puede ser de utilidad)
+    - Los beans de Spring y sus dependencias deben declararse en el archivo resources.groovy mediante el [DSL de Spring](http://grails.org/doc/1.3.5/guide/14.%20Grails%20and%20Spring.html)
 
-- El servicio Grails deberá ejecutar una por una de manera transaccional, y al detectar una excepción debe hacer rollback y abortar la ejecución (http://grails.org/doc/1.3.5/guide/8.%20The%20Service%20Layer.html)
+- El servicio Grails deberá ejecutar una por una de manera transaccional, y al detectar una excepción debe [hacer rollback y abortar la ejecución](http://grails.org/doc/1.3.5/guide/8.%20The%20Service%20Layer.html)
 - El servicio Grails solo gestionará un List o un Set ordenado, permitiendo que se inyecten tantos beans de Spring como necesite para ejecutar sus reglas, pero sin limitarlo a que se inyecten más
 - El servicio Grails debe arrojar un pequeño reporte a consola al iniciar indicando los beans de reglas que le fueron cargados, y en que orden (Tip: Pueden utilizar InitializingBean u otras herramientas de Spring)
 - El estado de cuenta debe ser un archivo XML, y además, este archivo debe ser validado por un esquema XSD.
 - El código para validar un XML en base a un XSD es el siguiente:
-´
-    import javax.xml.XMLConstants 
-    import javax.xml.transform.stream.StreamSource 
-    import javax.xml.validation.SchemaFactory 
-    import org.springframework.core.io.ClassPathResource 
 
-    def classpathRes = new ClassPathResource("/ruta/en/classpath/a/su/archivo.xsd")
-        def factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI)
-        def schema = factory.newSchema(new StreamSource(classpathRes.getInputStream()))
-    def validator = schema.newValidator()
-    validator.validate(new StreamSource(new StringReader(cadenaXml)))´
+>    `import javax.xml.XMLConstants` <br />
+>    `import javax.xml.transform.stream.StreamSource ` <br />
+>    `import javax.xml.validation.SchemaFactory` <br />
+>    `import org.springframework.core.io.ClassPathResource` <br />
+>    
+>    `def classpathRes = new ClassPathResource("/ruta/en/classpath/a/su/archivo.xsd")` <br />
+>        `def factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI)` <br />
+>        `def schema = factory.newSchema(new StreamSource(classpathRes.getInputStream()))` <br />
+>    `def validator = schema.newValidator()` <br />
+>    `validator.validate(new StreamSource(new StringReader(cadenaXml)))` <br />
+
 - El estado de cuenta debe tener perfectamente identificados los siguientes elementos:
   - Movimientos y su tipo (deposito, retiro, traspaso)
   - Cargos y abonos (impuestos, intereses, etc)
@@ -57,10 +58,7 @@ PRACTICA
 
 Referencias:
 
-- API de Spring Framework
-http://static.springsource.org/spring/docs/2.5.x/api/index.html
+- [API de Spring Framework](http://static.springsource.org/spring/docs/2.5.x/api/index.html)
+- Guía de Grails [1](http://grails.org/doc/1.3.5/guide/), [2](http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/)
 
-- Guía de Grails
-http://grails.org/doc/1.3.5/guide/
-http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/
 
