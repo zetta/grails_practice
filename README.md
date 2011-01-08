@@ -25,16 +25,16 @@ PRACTICA
 - El estado de cuenta debe ser un archivo XML, y además, este archivo debe ser validado por un esquema XSD.
 - El código para validar un XML en base a un XSD es el siguiente:
 
->    `import javax.xml.XMLConstants` <br />
->    `import javax.xml.transform.stream.StreamSource ` <br />
->    `import javax.xml.validation.SchemaFactory` <br />
->    `import org.springframework.core.io.ClassPathResource` <br />
->    
->    `def classpathRes = new ClassPathResource("/ruta/en/classpath/a/su/archivo.xsd")` <br />
->        `def factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI)` <br />
->        `def schema = factory.newSchema(new StreamSource(classpathRes.getInputStream()))` <br />
->    `def validator = schema.newValidator()` <br />
->    `validator.validate(new StreamSource(new StringReader(cadenaXml)))` <br />
+>        import javax.xml.XMLConstants
+>        import javax.xml.transform.stream.StreamSource
+>        import javax.xml.validation.SchemaFactory
+>        import org.springframework.core.io.ClassPathResource
+>        
+>        def classpathRes = new ClassPathResource("/ruta/en/classpath/a/su/archivo.xsd")
+>        def factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI)
+>        def schema = factory.newSchema(new StreamSource(classpathRes.getInputStream()))
+>        def validator = schema.newValidator()
+>        validator.validate(new StreamSource(new StringReader(cadenaXml)))
 
 - El estado de cuenta debe tener perfectamente identificados los siguientes elementos:
   - Movimientos y su tipo (deposito, retiro, traspaso)

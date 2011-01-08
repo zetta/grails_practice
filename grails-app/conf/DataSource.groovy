@@ -13,14 +13,16 @@ hibernate {
 environments {
     development {
         dataSource {
-            //dbCreate = "create-drop" // one of 'create', 'create-drop','update'
-            //url = "jdbc:hsqldb:mem:devDB"
+            dbCreate = "create-drop" // one of 'create', 'create-drop','update'
+            url = "jdbc:hsqldb:mem:devDB"
+          /*
            	pooled = true
 			driverClassName = "com.mysql.jdbc.Driver"
 			username = "root"
 			password = "temporal"
 			dbCreate = "create-drop"
 			url = "jdbc:mysql://localhost/grails"
+		  */
         }
     }
     test {

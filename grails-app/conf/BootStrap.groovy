@@ -50,7 +50,7 @@ class BootStrap {
     		
     		(1..300).each{
     			def movimiento = new Movimiento(
-    				tipoMovimiento: ['retiro','deposito','traspaso'][ ran(0,2) ],
+    				tipoMovimiento: ['retiro','deposito','traspaso','deposito'][ ran(0,3) ],
     				monto: ran(50,40000),
     				fecha: new DateTime().minusDays( ran(0,80) ).minusHours(ran(0,12)).minusSeconds(ran(0,500)) ,
     				concepto: 'Lorem Ipsum Dolor',
