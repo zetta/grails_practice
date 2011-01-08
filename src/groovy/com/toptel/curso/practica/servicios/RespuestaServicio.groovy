@@ -6,7 +6,7 @@ class RespuestaServicio
 	
 	String mensaje
 	int codigoError
-	Byte[] estadoCuenta
+	String estadoCuenta
 	
 	
-}
+}	

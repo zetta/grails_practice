@@ -1,18 +1,17 @@
 package com.toptel.curso.practica.servicios
 
-import  com.toptel.curso.practica.helpers
+
 
 class CuentaBancariaService implements ServicioBanco {
 
     static transactional = true
+	def calculadorHelper
 
-
-	RespuestaServicio calcularEstadoCuenta (int year, int month)
+	RespuestaServicio calcularEstadoCuenta (int year, int month, String accountNumber)
 	{
-		def respuesta = new RespuestaServicio();
-		def helper = new CalculadorGlobalHelper()
-		respuesta.estadoCuenta =  helper.calcula(year,month)
-		
+		def respuesta = new RespuestaServicio()
+		respuesta.estadoCuenta =  calculadorHelper.calcula(year,month,accountNumber)
+		return respuesta
 	}
 
 
