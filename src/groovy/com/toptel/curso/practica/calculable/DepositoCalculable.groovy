@@ -1,10 +1,10 @@
 package com.toptel.curso.practica.calculable
 
 
-class DepositoCalculable extends AbstractCalculable implements Calculable 
+class DepositoCalculable implements Calculable 
 {
 
-	BigDecimal calcula(List movimientos)
+	BigDecimal calcula(List movimientos, BigDecimal saldoTotal)
 	{
 		def total = 0.0g
 		movimientos.each

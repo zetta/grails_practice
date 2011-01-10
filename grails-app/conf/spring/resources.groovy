@@ -8,7 +8,9 @@ beans = {
 			ref("retiroCalculable"),
 			ref("traspasoCalculable"),
 			ref("impuestoCalculable"),
-			ref("interesCalculable")
+			ref("interesCalculable"),
+			ref("comisionCalculable")
+			
 		]	
 	}
 	
@@ -18,5 +20,5 @@ beans = {
 	traspasoCalculable(com.toptel.curso.practica.calculable.TraspasoCalculable)
 	impuestoCalculable(com.toptel.curso.practica.calculable.ImpuestoCalculable)
 	interesCalculable(com.toptel.curso.practica.calculable.InteresCalculable)
-
+	comisionCalculable(com.toptel.curso.practica.calculable.ComisionCalculable)
 }

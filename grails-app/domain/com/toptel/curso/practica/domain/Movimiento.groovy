@@ -13,10 +13,10 @@ class Movimiento {
 
     static constraints = {
     }
-    
+    /*
     String toString()
     {
     	"${tipoMovimiento} (${monto})"
-    }
+    }*/
     
 }

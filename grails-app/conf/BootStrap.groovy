@@ -18,10 +18,10 @@ class BootStrap {
     	
     	[
     	 [nombre: 'Pedro Perez', domicilio:'conocido',rfc:'CEJJ860613AN7',email:'pedro@correo.de',telefono:'1122334455',cuenta:'0102030405'],
-    	 [nombre: 'Juan Perez', domicilio:'conocido',rfc:'CEJJ860613AN6',email:'juan@correo.de',telefono:'1122334455',cuenta:'0102030406'],
+    	 /*[nombre: 'Juan Perez', domicilio:'conocido',rfc:'CEJJ860613AN6',email:'juan@correo.de',telefono:'1122334455',cuenta:'0102030406'],
     	 [nombre: 'Jose Perez', domicilio:'conocido',rfc:'CEJJ860613AN5',email:'jose@correo.de',telefono:'1122334455',cuenta:'0102030407'],
     	 [nombre: 'Ruben Perez', domicilio:'conocido',rfc:'CEJJ860613AN4',email:'ruben@correo.de',telefono:'1122334455',cuenta:'0102030408'],
-    	 [nombre: 'Raul Perez', domicilio:'conocido',rfc:'CEJJ860613AN3',email:'raul@correo.de',telefono:'1122334455',cuenta:'0102030409'],
+    	 [nombre: 'Raul Perez', domicilio:'conocido',rfc:'CEJJ860613AN3',email:'raul@correo.de',telefono:'1122334455',cuenta:'0102030409'],*/
     	 [nombre: 'Miguel Perez', domicilio:'conocido',rfc:'CEJJ860613AN3',email:'miguel@correo.de',telefono:'1122334455',cuenta:'0102030410']
     	].each
     	{
@@ -48,11 +48,11 @@ class BootStrap {
 			)
 			persona.cuentas << cuenta 
     		
-    		(1..300).each{
+    		(1..500).each{
     			def movimiento = new Movimiento(
-    				tipoMovimiento: ['retiro','deposito','traspaso','deposito'][ ran(0,3) ],
-    				monto: ran(50,40000),
-    				fecha: new DateTime().minusDays( ran(0,80) ).minusHours(ran(0,12)).minusSeconds(ran(0,500)) ,
+    				tipoMovimiento: ['retiro','deposito','traspaso-propio','deposito','traspaso-terceros','deposito'][ ran(0,5) ],
+    				monto: ran(50,limite),
+    				fecha: new DateTime().minusDays( ran(0,80) ).minusHours(ran(0,24)).minusSeconds(ran(0,500)) ,
     				concepto: 'Lorem Ipsum Dolor',
     				cuenta: cuenta
     			)

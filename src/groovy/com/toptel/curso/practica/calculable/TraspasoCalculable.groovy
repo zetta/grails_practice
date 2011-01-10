@@ -1,16 +1,16 @@
 package com.toptel.curso.practica.calculable
 
 
-class TraspasoCalculable extends AbstractCalculable implements Calculable 
+class TraspasoCalculable implements Calculable 
 {
 
-	BigDecimal calcula(List movimientos)
+	BigDecimal calcula(List movimientos, BigDecimal saldoTotal)
 	{
 		def total = 0.0g
 		movimientos.each
 		{
 			movimiento ->
-			if('traspaso' == movimiento.tipoMovimiento)
+			if('traspaso-propio' == movimiento.tipoMovimiento || 'traspaso-terceros' == movimiento.tipoMovimiento)
 			{
 				total -= movimiento.monto
 			}
